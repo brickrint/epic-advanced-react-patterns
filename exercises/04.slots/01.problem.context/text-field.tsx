@@ -1,4 +1,5 @@
 import { useId } from 'react'
+import { SlotContext } from './slots'
 
 export function TextField({
 	id,
@@ -12,7 +13,12 @@ export function TextField({
 
 	// 🐨 create a slots object that has props for both label and input slots
 	// 💰 the label should provide an htmlFor prop and the input should provide an id
+	const slots = {
+		label: { htmlFor: id },
+		input: { id },
+		div: { style: { border: '1px solid black' } },
+	}
 
 	// 🐨 wrap this in a SlotContext.Provider with the value set to the slots object
-	return children
+	return <SlotContext.Provider value={slots}>{children}</SlotContext.Provider>
 }

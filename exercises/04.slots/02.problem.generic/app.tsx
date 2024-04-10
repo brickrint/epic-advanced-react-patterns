@@ -1,19 +1,17 @@
 import { useId } from 'react'
-import { Input, Label } from './slots.tsx'
-import { TextField } from './text-field.tsx'
-import { Toggle, ToggleButton, ToggleOff, ToggleOn } from './toggle.tsx'
+import { Input, Label } from './slots'
+import { TextField } from './text-field'
+import { Toggle, ToggleButton, ToggleOff, ToggleOn } from './toggle'
 
 export function App() {
-	// 💣 delete this variable
-	const partyModeId = useId()
 	return (
 		<div>
 			<div>
-				<Toggle>
+				<Toggle id="myID">
 					{/* 🐨 switch this label for the Label component from ./slots.tsx */}
-					<label htmlFor={partyModeId}>Party mode</label>
+					<Label>Party mode</Label>
 					{/* 🐨 remove this id prop */}
-					<ToggleButton id={partyModeId} />
+					<ToggleButton />
 					<ToggleOn>Let's party 🥳</ToggleOn>
 					<ToggleOff>Sad town 😭</ToggleOff>
 				</Toggle>

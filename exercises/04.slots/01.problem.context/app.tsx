@@ -18,9 +18,9 @@ export function App() {
 			<hr />
 			<div>
 				{/* 🦉 feel free to test the id customization by passing an id here */}
-				<TextField>
+				<TextField id='customID'>
 					{/* 🦉 feel free to test the prop merging by passing props here */}
-					<Label>Venue</Label>
+					<Label slot='div'>Venue</Label>
 					<Input />
 				</TextField>
 			</div>
